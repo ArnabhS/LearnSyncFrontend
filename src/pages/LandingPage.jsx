@@ -1,13 +1,14 @@
 import React from "react";
 import { MoveRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   return <div className="  p-2 w-[98%] lg:w-[96%]  mx-auto mt-2 flex flex-col flex-1 justify-center  ">
     <div className=" flex items-center justify-center ">
      <div className="  w-[90%] lg:w-[65%]  mt-4 md:mt-12 lg:mt-12  h-fit text-wrap  ">
 
-     <div className="absolute inset-24 bg-[#8CC9E2] opacity-32 blur-[235.92px] flex items-center w-[80%] md:w-[60%] lg:w-[36%] mx-auto"></div>
+     {/* <div className="absolute inset-24 bg-[#8CC9E2] opacity-32 blur-[235.92px] flex items-center w-[80%] md:w-[60%] lg:w-[36%] mx-auto"></div> */}
       
        <h1 className='relative w-fit  text-center  font-bold !leading-snug tracking-widest text-white text-3xl md:text-5xl lg:text-6xl mb-12'>
               An AI{' '}
@@ -17,7 +18,14 @@ export default function LandingPage() {
               </h1>
 
       <div className=" flex justify-center">
-        <button className=" flex bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] p-2 w-[80%] md:w-[50%] lg:w-[36%] rounded-xl text-base lg:text-xl text-white justify-center">Start asking <MoveRight size={30} className=" ml-2" /></button>
+        {/* <button className=" flex bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] p-2 w-[80%] md:w-[50%] lg:w-[36%] rounded-xl text-base lg:text-xl text-white justify-center">
+          
+          Start asking <MoveRight size={30} className=" ml-2" /></button> */}
+
+        <Link to={"/chat"} className=" flex bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] p-2 w-[80%] md:w-[50%] lg:w-[36%] rounded-xl text-base lg:text-xl text-white justify-center" >
+                        {" "}
+                Start asking <MoveRight size={30} className=" ml-2" />
+              </Link>
       </div>
       
        
