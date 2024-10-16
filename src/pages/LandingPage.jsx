@@ -1,12 +1,15 @@
 import React from "react";
 import { MoveRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function LandingPage() {
   return <div className="  p-2 w-[98%] lg:w-[96%]  mx-auto mt-2 flex flex-col flex-1 justify-center  ">
-    <div className=" flex items-center justify-center">
-     <div className=" w-[90%] lg:w-[50%] p-3 mt-4 md:mt-12 lg:mt-10  h-fit text-wrap  ">
+    <div className=" flex items-center justify-center ">
+     <div className="  w-[90%] lg:w-[65%]  mt-4 md:mt-12 lg:mt-12  h-fit text-wrap  ">
+
+     <div className="absolute inset-24 bg-[#8CC9E2] opacity-32 blur-[235.92px] flex items-center w-[80%] md:w-[60%] lg:w-[36%] mx-auto"></div>
       
-       <h1 className='relative w-fit  text-balance  font-bold !leading-tight tracking-widest text-white text-3xl md:text-5xl lg:text-6xl mb-6'>
+       <h1 className='relative w-fit  text-center  font-bold !leading-snug tracking-widest text-white text-3xl md:text-5xl lg:text-6xl mb-12'>
               An AI{' '}
                 <span className='bg-gradient-to-r from-[#8CC9E2] to-[#3EB1E1] bg-clip-text text-transparent'>Companion</span>{' '}
                 That Understands You, So You Can Learn {' '}
@@ -23,12 +26,36 @@ export default function LandingPage() {
  
     </div>
     
-    <div className=" flex justify-between text-wrap text-[#00FFAE] p-1 mt-6 md:mt-14 lg:mt-18  w-full lg:w-[96%] mx-auto text-xs lg:text-sm leading-6 mb-8">
+    {/* <div className=" flex justify-between text-wrap text-[#00FFAE] p-1 mt-6 md:mt-14 lg:mt-18  w-full lg:w-[96%] mx-auto text-xs lg:text-sm leading-6 mb-8">
       <div>Your Personalized Learning Companion!</div>
       <div>Where AI Meets Empathy for Meaningful Growth</div>
       <div>Understanding You, Enhancing Learning</div>
 
+    </div> */}
+
+<div className="overflow-hidden w-[96%] mx-auto mt-6 md:mt-14 lg:mt-14 mb-8">
+      <motion.div
+        className="flex justify-between items-center text-[#00FFAE] p-1 w-max text-xs lg:text-base leading-6"
+        animate={{ x: ['100%', '-100%'] }}
+        transition={{
+          repeat: Infinity,
+          duration: 30, // Adjust duration for speed
+          ease: 'linear',
+        }}
+      >
+        <div className="mx-10 ">Your Personalized Learning Companion!</div>
+        <div className="mx-10">Where AI Meets Empathy for Meaningful Growth</div>
+        <div className="mx-10">Understanding You, Enhancing Learning</div>
+        <div className="mx-10">Your Personalized Learning Companion!</div> {/* Repeat for smoothness */}
+        <div className="mx-10">Where AI Meets Empathy for Meaningful Growth</div>
+        <div className="mx-10">Understanding You, Enhancing Learning</div>
+        <div className="mx-10 ">Your Personalized Learning Companion!</div>
+        <div className="mx-10">Where AI Meets Empathy for Meaningful Growth</div>
+        <div className="mx-10">Understanding You, Enhancing Learning</div>
+
+      </motion.div>
     </div>
+
     
     <div className=" text-white mt-0 md:mt-10 lg:mt-16 p-4 w-[96%] md:w-[84%] lg:w-[60%] mx-auto flex flex-col justify-center items-center mb-24">
       <h1 className=" text-2xl font-semibold md:text-4xl lg:text-5xl mb-3 p-2 lg:p-4">What we want to {' '}
