@@ -12,7 +12,7 @@ export default function LandingPage() {
       
        <h1 className='relative w-fit  text-center  font-bold !leading-snug tracking-widest text-[#DCECF2] text-3xl md:text-5xl lg:text-6xl mb-12'>
 
-       <div className="absolute inset-24 bg-[#8CC9E2] opacity-56 blur-[235.92px] flex items-center w-[80%] md:w-[60%] lg:w-[36%] mx-auto"></div>
+       
               An AI{' '}
                 <span className='bg-gradient-to-r from-[#8CC9E2] to-[#3EB1E1] bg-clip-text text-transparent'>Companion</span>{' '}
                 That Understands You, So You Can Learn {' '}
@@ -22,9 +22,10 @@ export default function LandingPage() {
       <div className=" flex justify-center">
         
 
-        <Link to={"/chat"} className=" flex bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] p-2 w-[80%] md:w-[50%] lg:w-[36%] rounded-xl text-base lg:text-xl text-white justify-center" >
+        <Link to={"/chat"} className=" flex bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] p-2 w-[50%] md:w-[36%] lg:w-[26%] rounded-xl text-sm md:text-base lg:text-xl text-white justify-center items-center" >
                         {" "}
-                Start asking <MoveRight size={30} className=" ml-2" />
+                Start asking <MoveRight size={20} className=" block md:hidden ml-2" />
+                <MoveRight size={30} className=" md:block hidden ml-2" />
               </Link>
       </div>
       
@@ -34,12 +35,7 @@ export default function LandingPage() {
  
     </div>
     
-    {/* <div className=" flex justify-between text-wrap text-[#00FFAE] p-1 mt-6 md:mt-14 lg:mt-18  w-full lg:w-[96%] mx-auto text-xs lg:text-sm leading-6 mb-8">
-      <div>Your Personalized Learning Companion!</div>
-      <div>Where AI Meets Empathy for Meaningful Growth</div>
-      <div>Understanding You, Enhancing Learning</div>
-
-    </div> */}
+    
 
 <div className="overflow-hidden w-[96%] mx-auto mt-6 md:mt-14 lg:mt-14 mb-8">
       <motion.div
