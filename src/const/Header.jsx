@@ -8,7 +8,7 @@ export default function Header() {
       {/* <button className=" bg-gradient-to-r from-[#8CC9E2] to-[#1D6F91] lg:py-2 lg:px-4 py-1 px-2  rounded-lg  text-white font-base leading-6 flex items-center justify-center text-sm lg:text-lg ">Login</button> */}
 
       {/* <button className=" w-[20%] md:w-[12%] lg:w-[10%] py-1 lg:py-2  rounded-lg  bg-gradient-to-r from-[#8CC9E2] to-[#1D6F91] text-white ont-base  flex items-center justify-center text-sm lg:text-lg "> */}
-      <Link to={"/login"}  className=" w-[20%] md:w-[12%] lg:w-[10%] py-1 lg:py-2  rounded-lg  bg-gradient-to-r from-[#8CC9E2] to-[#1D6F91] text-white ont-base  flex items-center justify-center text-sm lg:text-lg ">
+      <Link to={"/login"}  className=" w-[20%] md:w-[12%] lg:w-[8%] py-1 lg:py-1  rounded-lg  bg-gradient-to-r from-[#8CC9E2] to-[#1D6F91] text-white ont-base  flex items-center justify-center text-sm lg:text-lg ">
                 {" "}
                 Login
               </Link>
