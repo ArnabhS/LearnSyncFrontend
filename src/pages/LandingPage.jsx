@@ -11,6 +11,7 @@ export default function LandingPage() {
      {/* <div className="absolute inset-24 bg-[#8CC9E2] opacity-56 blur-[235.92px] flex items-center w-[80%] md:w-[60%] lg:w-[36%] mx-auto"></div> */}
       
        <h1 className='relative w-fit  text-center  font-bold !leading-snug tracking-widest text-[#DCECF2] text-3xl md:text-5xl lg:text-6xl mb-12'>
+
        <div className="absolute inset-24 bg-[#8CC9E2] opacity-56 blur-[235.92px] flex items-center w-[80%] md:w-[60%] lg:w-[36%] mx-auto"></div>
               An AI{' '}
                 <span className='bg-gradient-to-r from-[#8CC9E2] to-[#3EB1E1] bg-clip-text text-transparent'>Companion</span>{' '}
