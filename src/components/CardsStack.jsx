@@ -34,8 +34,10 @@ export const CardsStack = ({ items, offset, scaleFactor }) => {
   }, [answeredCount, items.length, navigate]);
 
   return (
-    <div className="flex justify-center items-center w-full md:w-[88%] mx-auto p-2 md:p-24 mt-6 mb-12">
-      <div className="relative h-60 w-[98%] mx-auto md:h-60 py-12 md:w-[86%] lg:w-[70%] mb-12">
+    <div className="flex justify-center items-center w-full md:w-[88%] mx-auto p-2 md:p-24 mt-6 mb-12 bg-transparent  
+    ">
+      <div className="relative h-60 w-[98%] mx-auto md:h-60 py-12 md:w-[86%] lg:w-[70%] mb-12 bg-transparent rounded-xl   
+      ">
         {cards.map((card, index) => (
           <motion.div
             key={card.id}
@@ -59,7 +61,7 @@ export const CardsStack = ({ items, offset, scaleFactor }) => {
                   className={`block w-full text-left mt-2 p-2 rounded-lg ${
                     selectedOption === optionIndex
                       ? "bg-blue-500 text-white" 
-                      : "bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600"
+                      : " dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600"
                   }`}
                   onClick={() => handleOptionClick(optionIndex)}
                 >

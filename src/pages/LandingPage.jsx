@@ -3,6 +3,8 @@ import { MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import { CardsStack } from "../components/CardsStack";
+import MCQCard from "../components/MCQCard";
+
 
 export default function LandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false); 
@@ -127,10 +129,9 @@ export default function LandingPage() {
     </div>
     
     <div>
-       {/* MCQ CardStack */}
-       <div className="mt-10 mb-10 bg-purple-0">
-        <CardsStack items={items} /> 
-      </div>
+       <div>
+        <MCQCard />
+       </div>
     </div>
   {/* </div>
 
