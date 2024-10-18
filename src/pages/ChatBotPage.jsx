@@ -116,7 +116,7 @@ export default function ChatBotPage() {
           <div className="h-[75vh] -mt-2 rounded-lg overflow-y-auto">
             <div className="w-[90%] md:w-[60%] mx-auto space-y-4 flex-1">
               {messages.map((msg) => (
-                <div key={msg.id} className={`flex ${msg.isUserMessage ? "justify-start" : "justify-end"}`}>
+                <div key={msg.id} className={`flex ${msg.isUserMessage ? "justify-end" : "justify-start"}`}>
                   <div
                     className={`p-3 rounded-lg md:text-lg text-sm ${
                       msg.isUserMessage
