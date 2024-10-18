@@ -49,7 +49,7 @@ export default function LandingPage() {
             delay: 1, // Small delay after page load if needed
           }}
           whileHover={{ x: 0 }} // Pause on hover
-        >
+        >``
           <div className="mx-10">Your Personalized Learning Companion!</div>
           <div className="mx-10">
             Where AI Meets Empathy for Meaningful Growth
