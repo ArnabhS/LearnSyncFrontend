@@ -6,7 +6,10 @@ export const checkUserSession = createAsyncThunk(
   "auth/checkSession",
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get("http://localhost:5000/api/v1/auth/me");
+      const response = await axios.get("http://localhost:5000/api/v1/auth/me", {
+        withCredentials: true,
+      });
+      //   console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue("Session expired or invalid");
@@ -37,7 +40,10 @@ export const loginUser = createAsyncThunk(
     try {
       const response = await axios.post(
         "http://localhost:5000/api/v1/auth/login",
-        userData
+        userData,
+        {
+          withCredentials: true,
+        }
       );
       return response.data;
     } catch (error) {
@@ -51,7 +57,13 @@ export const logoutUser = createAsyncThunk(
   "auth/logout",
   async (_, thunkAPI) => {
     try {
-      await axios.post("http://localhost:5000/api/v1/auth/logout");
+      await axios.post(
+        "http://localhost:5000/api/v1/auth/logout",
+        {},
+        {
+          withCredentials: true,
+        }
+      );
       return null;
     } catch (error) {
       return thunkAPI.rejectWithValue("Logout failed");
@@ -71,7 +83,6 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(signupUser.fulfilled, (state, action) => {
-        state.user = action.payload;
         state.error = null;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
@@ -83,6 +94,8 @@ const authSlice = createSlice({
       })
       .addCase(checkUserSession.fulfilled, (state, action) => {
         state.user = action.payload;
+        state.loading = false;
+        state.error = null;
       })
       .addMatcher(
         (action) => action.type.endsWith("/rejected"),
