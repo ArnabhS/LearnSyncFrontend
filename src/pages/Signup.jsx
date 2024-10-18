@@ -3,12 +3,11 @@ import { IoMail } from "react-icons/io5";
 import { IoIosLock } from "react-icons/io";
 import { FaUserLarge } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import MCQCard from "../components/MCQCard";
 
 export default function Signup() {
   return (
     <div className="relative flex flex-col justify-center items-center mt-[10%]">
-      {/* <div className="relative ">
+      <div className="relative ">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[50%] h-[50%] bg-[#3EB1E1] rounded-full blur-3xl opacity-55 z-0"></div>
         <div className="relative">
           <div className="bg-gradient-to-t from-[#09212B99] to-[#1D6F9199] text-[#DCECF2] flex flex-col justify-center items-center md:max-w-2xl max-w-full h-auto gap-5 rounded-xl py-14 px-10 mx-2">
@@ -53,8 +52,7 @@ export default function Signup() {
             </p>
           </div>
         </div>
-      </div> */}
-      <MCQCard />
+      </div>
     </div>
   );
 }
