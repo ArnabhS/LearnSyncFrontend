@@ -89,6 +89,8 @@ export default function LandingPage() {
         </p>
       </div>
 
+      < MCQCard />
+
       
     </div>
   );
