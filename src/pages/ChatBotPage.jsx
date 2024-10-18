@@ -17,21 +17,63 @@ export default function ChatBotPage() {
     setInput(text);
   };
 
+  // const sendMessage = async (message) => {
+  //   if (message.text.trim() === "") return;
+
+  //   // Update the messages state to display the user's message
+  //   setMessages((prevMessages) => [...prevMessages, message]);
+
+  //   try {
+  //     // Send the message to the backend using axios
+  //     const response = await axios.post("http://localhost:5000/api/v1/chat-bot", {
+  //       message: message.text,
+  //     }, {withCredentials: true});
+
+  //     // Log the response data
+  //     console.log(response.data);
+
+  //     // Update the messages state with the bot's response
+  //     setMessages((prevMessages) => [
+  //       ...prevMessages,
+  //       {
+  //         id: nanoid(),
+  //         isUserMessage: false,
+  //         text: response.data.message, // Bot's response
+  //       },
+  //     ]);
+
+  //     // If there are next questions, handle them accordingly
+  //     if (response.data.nextQuestions) {
+  //       console.log("Next Questions:", response.data.nextQuestions);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error in chatbot interaction:", error);
+  //   }
+
+  //   // Clear the input field and hide the intro section
+  //   setInput("");
+  //   setShowIntro(false); // Hide intro after the first message is sent
+  // };
+
+  // Scroll to bottom when new messages are added
+  
+  
+
   const sendMessage = async (message) => {
     if (message.text.trim() === "") return;
-
+  
     // Update the messages state to display the user's message
     setMessages((prevMessages) => [...prevMessages, message]);
-
+  
     try {
       // Send the message to the backend using axios
       const response = await axios.post("http://localhost:5000/api/v1/chat-bot", {
         message: message.text,
-      });
-
+      }, { withCredentials: true });
+  
       // Log the response data
       console.log(response.data);
-
+  
       // Update the messages state with the bot's response
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -41,7 +83,7 @@ export default function ChatBotPage() {
           text: response.data.message, // Bot's response
         },
       ]);
-
+  
       // If there are next questions, handle them accordingly
       if (response.data.nextQuestions) {
         console.log("Next Questions:", response.data.nextQuestions);
@@ -49,13 +91,14 @@ export default function ChatBotPage() {
     } catch (error) {
       console.error("Error in chatbot interaction:", error);
     }
-
+  
     // Clear the input field and hide the intro section
-    setInput("");
+    setInput(""); // Clear the input after processing the message
     setShowIntro(false); // Hide intro after the first message is sent
   };
 
-  // Scroll to bottom when new messages are added
+
+  
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);

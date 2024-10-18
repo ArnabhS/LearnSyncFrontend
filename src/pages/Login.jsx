@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMail } from "react-icons/io5";
 import { IoIosLock } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../redux/authSlice";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { error } = useSelector((state) => state.auth);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const result = await dispatch(loginUser({ email, password }));
+    if (result.meta.requestStatus === "fulfilled") {
+      navigate("/");
+    }
+  };
   return (
     <div className="relative flex flex-col justify-center items-center min-h-screen">
       <div className="relative ">
@@ -19,17 +34,22 @@ export default function Login() {
                 className="bg-[#D9D9D9] outline-none text-[#5B5B5B] w-full p-1"
                 type="text"
                 placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="bg-[#D9D9D9] flex flex-row items-center gap-2 px-2 py-1 rounded-md w-full">
               <IoIosLock className="text-[#5B5B5B] text-2xl" />
               <input
                 className="bg-[#D9D9D9] outline-none text-[#5B5B5B] w-full p-1"
-                type="text"
+                type="password"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button className="bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] px-4 py-1 rounded-md">
+            <button
+              onClick={handleSubmit}
+              className="bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] px-4 py-1 rounded-md"
+            >
               Login
             </button>
             <p className=" tracking-wide text-center">
