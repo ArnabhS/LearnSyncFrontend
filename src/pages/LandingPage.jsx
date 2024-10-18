@@ -25,7 +25,7 @@ export default function LandingPage() {
           <div className=" flex justify-center">
             <Link
               to={"/chat"}
-              className=" flex bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] p-2 w-[50%] md:w-[36%] lg:w-[26%] rounded-xl text-sm md:text-base lg:text-xl text-white justify-center items-center"
+              className=" flex bg-gradient-to-r from-[#1D6F91] to-[#3EB1E1] p-2 w-[50%] md:w-[36%] lg:w-[26%] rounded-xl text-sm md:text-base lg:text-xl text-white justify-center items-center z-10"
             >
               {" "}
               Start asking{" "}
