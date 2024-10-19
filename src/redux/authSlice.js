@@ -45,6 +45,7 @@ export const loginUser = createAsyncThunk(
           withCredentials: true,
         }
       );
+    
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
@@ -87,6 +88,7 @@ const authSlice = createSlice({
       })
       .addCase(loginUser.fulfilled, (state, action) => {
         state.user = action.payload;
+         state.firstLoginQuestions = action.payload.firstLoginQuestions || [];
         state.error = null;
       })
       .addCase(logoutUser.fulfilled, (state) => {

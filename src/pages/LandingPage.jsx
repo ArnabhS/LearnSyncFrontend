@@ -1,4 +1,4 @@
-import React from "react";
+
 import { MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -79,7 +79,7 @@ export default function LandingPage() {
         <p className=" text-md md:text-xl lg:text-2xl p-2 lg:p-4 text-left md:text-center leading-loose font-medium relative left-2 md:left-0 md:block italic">
           Our aim is to provide an{" "}
           <span className=" text-[#3EB1E1]">adaptive</span> learning experience
-          tailored to each individual's unique strengths and needs. Through
+          tailored to each individual&apos;s unique strengths and needs. Through
           engaging conversations and{" "}
           <span className=" text-[#3EB1E1]">personalized</span> insights, we
           help users explore their potential, making learning enjoyable,
@@ -89,7 +89,7 @@ export default function LandingPage() {
         </p>
       </div>
 
-      < MCQCard />
+      {/* < MCQCard /> */}
 
       
     </div>
