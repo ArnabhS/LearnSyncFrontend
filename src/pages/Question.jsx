@@ -23,7 +23,7 @@ export default function Questions() {
         );
         const data = response.data;
         console.log(data);
-        setQuestions(data.firstLoginQuestions || []);
+        setQuestions(data.newQuestions || []);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching questions:", error);
@@ -55,7 +55,7 @@ export default function Questions() {
   const handleSubmit = async () => {
     const finalAnswer = selectedOption[0];
     const finalAnswersArray = [...answers, finalAnswer];
-
+    console.log(finalAnswersArray)
     try {
       const response = await axios.post(
         "http://localhost:5000/api/v1/test/submit-answers",
