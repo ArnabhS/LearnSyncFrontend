@@ -42,20 +42,32 @@ export default function Questions() {
 
   // Handle "Next" button click
   const handleNextQuestion = () => {
+    // If no option is selected, show an alert
+    if (!selectedOption) {
+      alert("Please choose an option first.");
+      return;
+    }
+
     const currentAnswer = selectedOption[0]; // Extract the first letter (A, B, C, or D)
     setAnswers((prevAnswers) => [...prevAnswers, currentAnswer]);
 
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedOption(""); // Reset selected option for next question
+      setSelectedOption(""); // Reset selected option for the next question
     }
   };
 
   // Handle form submission
   const handleSubmit = async () => {
+    // If no option is selected, show an alert
+    if (!selectedOption) {
+      alert("Please choose an option first.");
+      return;
+    }
+
     const finalAnswer = selectedOption[0];
     const finalAnswersArray = [...answers, finalAnswer];
-    console.log(finalAnswersArray)
+    console.log(finalAnswersArray);
     try {
       const response = await axios.post(
         "http://localhost:5000/api/v1/test/submit-answers",
@@ -110,22 +122,24 @@ export default function Questions() {
               </h2>
 
               <div className="flex flex-col gap-4">
-                {questions[currentQuestionIndex].options.map((option, index) => (
-                  <label
-                    key={index}
-                    className="flex gap-3 justify-start items-center py-1 cursor-pointer"
-                  >
-                    <input
-                      type="radio"
-                      name={`question-${currentQuestionIndex}`}
-                      value={option}
-                      checked={selectedOption === option}
-                      onChange={handleOptionChange}
-                      className="custom-radio"
-                    />
-                    <p>{option}</p>
-                  </label>
-                ))}
+                {questions[currentQuestionIndex].options.map(
+                  (option, index) => (
+                    <label
+                      key={index}
+                      className="flex gap-3 justify-start items-center py-1 cursor-pointer"
+                    >
+                      <input
+                        type="radio"
+                        name={`question-${currentQuestionIndex}`}
+                        value={option}
+                        checked={selectedOption === option}
+                        onChange={handleOptionChange}
+                        className="custom-radio"
+                      />
+                      <p>{option}</p>
+                    </label>
+                  )
+                )}
               </div>
             </div>
           </div>
