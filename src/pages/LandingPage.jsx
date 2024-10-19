@@ -2,6 +2,7 @@ import React from "react";
 import { MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import MCQCard from "../components/MCQCard";
 
 export default function LandingPage() {
   return (
@@ -87,6 +88,10 @@ export default function LandingPage() {
           every learner can grow at their own pace!
         </p>
       </div>
+
+      < MCQCard />
+
+      
     </div>
   );
 }
